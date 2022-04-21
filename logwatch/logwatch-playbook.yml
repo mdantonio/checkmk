@@ -1,0 +1,81 @@
+---
+- hosts: logwatch
+  become: yes
+  tasks:
+    - name: /var/log/syslog /var/log/messages maxlinesize=1024 encoding=utf-8
+      lineinfile: path=/etc/check_mk/logwatch.cfg
+        state=present
+        regexp="/var/log/syslog"
+        line="/var/log/syslog /var/log/messages maxlinesize=1024 encoding=utf-8"
+    - name: I ansible Invoked with
+      lineinfile: path=/etc/check_mk/logwatch.cfg
+        state=present
+        insertafter="/var/log/syslog"
+        regexp=" I ansible.* Invoked with"
+        line=" I ansible.* Invoked with"
+    - name: I Container .* failed to exit within .* seconds of signal
+      lineinfile: path=/etc/check_mk/logwatch.cfg
+        state=present
+        insertafter="/var/log/syslog"
+        regexp=" I Container .* failed to exit within .* seconds of signal"
+        line=" I Container .* failed to exit within .* seconds of signal"
+    - name: I FuEngine failed to record HSI attributes
+      lineinfile: path=/etc/check_mk/logwatch.cfg
+        state=present
+        insertafter="/var/log/syslog"
+        regexp=" I FuEngine \s+ failed to record HSI attributes{{ ":" }} failed to get historical attr{{ ":" }} json-glib version too old"
+        line=" I FuEngine \s+ failed to record HSI attributes{{ ":" }} failed to get historical attr{{ ":" }} json-glib version too old"
+    - name: I FuPluginTpm failed to load eventlog
+      lineinfile: path=/etc/check_mk/logwatch.cfg
+        state=present
+        insertafter="/var/log/syslog"
+        regexp=" I FuPluginTpm \s+ failed to load eventlog{{ ":" }} Failed to open file"
+        line=" I FuPluginTpm \s+ failed to load eventlog{{ ":" }} Failed to open file"
+    - name: I ConnectionRefusedError
+      lineinfile: path=/etc/check_mk/logwatch.cfg
+        state=present
+        insertafter="/var/log/syslog"
+        regexp=" I ConnectionRefusedError{{ ":" }} \[Errno 111\] Connection refused"
+        line=" I ConnectionRefusedError{{ ":" }} \[Errno 111\] Connection refused"
+    - name: I ConnectionResetError
+      lineinfile: path=/etc/check_mk/logwatch.cfg
+        state=present
+        insertafter="/var/log/syslog"
+        regexp=" I ConnectionResetError{{ ":" }} \[Errno 104\] Connection reset by peer"
+        line=" I ConnectionResetError{{ ":" }} \[Errno 104\] Connection reset by peer"
+    - name: I SSL_do_handshakefailed while SSL handshaking
+      lineinfile: path=/etc/check_mk/logwatch.cfg
+        state=present
+        insertafter="/var/log/syslog"
+        regexp=" I SSL_do_handshake\(\) failed \(SSL{{ ":" }} error:.*:SSL routines:tls_parse_ctos_key_share:bad key share\) while SSL handshaking"
+        line=" I SSL_do_handshake\(\) failed \(SSL{{ ":" }} error:.*:SSL routines:tls_parse_ctos_key_share:bad key share\) while SSL handshaking"
+    - name: I failed No such file or directory
+      lineinfile: path=/etc/check_mk/logwatch.cfg
+        state=present
+        insertafter="/var/log/syslog"
+        regexp=" I failed \(2{{ ":" }} No such file or directory\), client"
+        line=" I failed \(2{{ ":" }} No such file or directory\), client"
+    - name: I Unable to decode JWT token. Signature verification failed
+      lineinfile: path=/etc/check_mk/logwatch.cfg
+        state=present
+        insertafter="/var/log/syslog"
+        regexp=" I Unable to decode JWT token\. Signature verification failed"
+        line=" I Unable to decode JWT token\. Signature verification failed"
+    - name: I Reached the maximum number of failed login, account is blocked
+      lineinfile: path=/etc/check_mk/logwatch.cfg
+        state=present
+        insertafter="/var/log/syslog"
+        regexp=" I Reached the maximum number of failed login, account .* is blocked"
+        line=" I Reached the maximum number of failed login, account .* is blocked"
+    - name: I Sorry, this account is temporarily blocked due to the number of failed login attempts
+      lineinfile: path=/etc/check_mk/logwatch.cfg
+        state=present
+        insertafter="/var/log/syslog"
+        regexp=" I Sorry, this account is temporarily blocked due to the number of failed login attempts"
+        line=" I Sorry, this account is temporarily blocked due to the number of failed login attempts"
+    - name: I PAM failed Authentication token is no longer valid; new one required
+      lineinfile: path=/etc/check_mk/logwatch.cfg
+        state=present
+        insertafter="/var/log/syslog"
+        regexp=" I PAM failed{{ ":" }} Authentication token is no longer valid; new one required"
+        line=" I PAM failed{{ ":" }} Authentication token is no longer valid; new one required"

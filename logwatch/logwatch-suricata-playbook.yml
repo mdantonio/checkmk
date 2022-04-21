@@ -1,0 +1,255 @@
+---
+- hosts: logwatch
+  become: yes
+  tasks:
+    - name: /var/log/suricata/fast.log
+      lineinfile: path=/etc/check_mk/logwatch.cfg
+        state=present
+        regexp="/var/log/suricata/fast.log"
+        line="/var/log/suricata/fast.log"
+    - name: I ET POLICY External Oracle T3 Requests Inbound
+      lineinfile: path=/etc/check_mk/logwatch.cfg
+        state=present
+        insertafter="/var/log/suricata/fast.log"
+        regexp=" I ET POLICY External Oracle T3 Requests Inbound"
+        line=" I ET POLICY External Oracle T3 Requests Inbound"
+    - name: I ET POLICY Incoming Basic Auth Base64 HTTP Password detected unencrypted
+      lineinfile: path=/etc/check_mk/logwatch.cfg
+        state=present
+        insertafter="/var/log/suricata/fast.log"
+        regexp=" I ET POLICY Incoming Basic Auth Base64 HTTP Password detected unencrypted"
+        line=" I ET POLICY Incoming Basic Auth Base64 HTTP Password detected unencrypted"
+    - name: I ET EXPLOIT Linksys E-Series Device RCE Attempt
+      lineinfile: path=/etc/check_mk/logwatch.cfg
+        state=present
+        insertafter="/var/log/suricata/fast.log"
+        regexp=" I ET EXPLOIT Linksys E-Series Device RCE Attempt"
+        line=" I ET EXPLOIT Linksys E-Series Device RCE Attempt"
+    - name: I ET INFO Common JSP WebShell String Observed
+      lineinfile: path=/etc/check_mk/logwatch.cfg
+        state=present
+        insertafter="/var/log/suricata/fast.log"
+        regexp=" I ET INFO Common JSP WebShell String Observed"
+        line=" I ET INFO Common JSP WebShell String Observed"
+    - name: I ET INFO Netlink GPON Login Attempt
+      lineinfile: path=/etc/check_mk/logwatch.cfg
+        state=present
+        insertafter="/var/log/suricata/fast.log"
+        regexp=" I ET INFO Netlink GPON Login Attempt"
+        line=" I ET INFO Netlink GPON Login Attempt"
+    - name: I ET HUNTING Suspicious Chmod Usage in URI
+      lineinfile: path=/etc/check_mk/logwatch.cfg
+        state=present
+        insertafter="/var/log/suricata/fast.log"
+        regexp=" I ET HUNTING Suspicious Chmod Usage in URI"
+        line=" I ET HUNTING Suspicious Chmod Usage in URI"
+    - name: I ET WEB_SPECIFIC_APPS Attempted Symantec Secure Web Gateway RCE
+      lineinfile: path=/etc/check_mk/logwatch.cfg
+        state=present
+        insertafter="/var/log/suricata/fast.log"
+        regexp=" I ET WEB_SPECIFIC_APPS Attempted Symantec Secure Web Gateway RCE"
+        line=" I ET WEB_SPECIFIC_APPS Attempted Symantec Secure Web Gateway RCE"
+    - name: I ET WEB_SPECIFIC_APPS vBulletin RCE Inbound
+      lineinfile: path=/etc/check_mk/logwatch.cfg
+        state=present
+        insertafter="/var/log/suricata/fast.log"
+        regexp=" I ET WEB_SPECIFIC_APPS vBulletin RCE Inbound"
+        line=" I ET WEB_SPECIFIC_APPS vBulletin RCE Inbound"
+    - name: I ET WEB_SPECIFIC_APPS Metabase Local File Inclusion Inbound \(CVE-2021-41277\)
+      lineinfile: path=/etc/check_mk/logwatch.cfg
+        state=present
+        insertafter="/var/log/suricata/fast.log"
+        regexp=" I ET WEB_SPECIFIC_APPS Metabase Local File Inclusion Inbound \(CVE-2021-41277\)"
+        line=" I ET WEB_SPECIFIC_APPS Metabase Local File Inclusion Inbound \(CVE-2021-41277\)"
+    - name: I ET WEB_SPECIFIC_APPS Vulnerable Magento Adminhtml Access
+      lineinfile: path=/etc/check_mk/logwatch.cfg
+        state=present
+        insertafter="/var/log/suricata/fast.log"
+        regexp=" I ET WEB_SPECIFIC_APPS Vulnerable Magento Adminhtml Access"
+        line=" I ET WEB_SPECIFIC_APPS Vulnerable Magento Adminhtml Access"
+    - name: I ET WEB_SERVER ColdFusion administrator access
+      lineinfile: path=/etc/check_mk/logwatch.cfg
+        state=present
+        insertafter="/var/log/suricata/fast.log"
+        regexp=" I ET WEB_SERVER ColdFusion administrator access"
+        line=" I ET WEB_SERVER ColdFusion administrator access"
+    - name: I ET WEB_SERVER Possible XXE SYSTEM ENTITY in POST BODY
+      lineinfile: path=/etc/check_mk/logwatch.cfg
+        state=present
+        insertafter="/var/log/suricata/fast.log"
+        regexp=" I ET WEB_SERVER Possible XXE SYSTEM ENTITY in POST BODY"
+        line=" I ET WEB_SERVER Possible XXE SYSTEM ENTITY in POST BODY"
+    - name: I ET WEB_SERVER Possible DD-WRT Metacharacter Injection Command Execution Attempt
+      lineinfile: path=/etc/check_mk/logwatch.cfg
+        state=present
+        insertafter="/var/log/suricata/fast.log"
+        regexp=" I ET WEB_SERVER Possible DD-WRT Metacharacter Injection Command Execution Attempt"
+        line=" I ET WEB_SERVER Possible DD-WRT Metacharacter Injection Command Execution Attempt"
+    - name: I ET WEB_SERVER /bin/sh In URI Possible Shell Command Execution Attempt
+      lineinfile: path=/etc/check_mk/logwatch.cfg
+        state=present
+        insertafter="/var/log/suricata/fast.log"
+        regexp=" I ET WEB_SERVER /bin/sh In URI Possible Shell Command Execution Attempt"
+        line=" I ET WEB_SERVER /bin/sh In URI Possible Shell Command Execution Attempt"
+    - name: I ET WEB_SERVER WGET Command Specifying Output in HTTP Headers
+      lineinfile: path=/etc/check_mk/logwatch.cfg
+        state=present
+        insertafter="/var/log/suricata/fast.log"
+        regexp=" I ET WEB_SERVER WGET Command Specifying Output in HTTP Headers"
+        line=" I ET WEB_SERVER WGET Command Specifying Output in HTTP Headers"
+    - name: I ET WEB_SERVER ThinkPHP RCE Exploitation Attempt
+      lineinfile: path=/etc/check_mk/logwatch.cfg
+        state=present
+        insertafter="/var/log/suricata/fast.log"
+        regexp=" I ET WEB_SERVER ThinkPHP RCE Exploitation Attempt"
+        line=" I ET WEB_SERVER ThinkPHP RCE Exploitation Attempt"
+    - name: I ET WEB_SERVER Possible D-Link Router HNAP Protocol Security Bypass Attempt
+      lineinfile: path=/etc/check_mk/logwatch.cfg
+        state=present
+        insertafter="/var/log/suricata/fast.log"
+        regexp=" I ET WEB_SERVER Possible D-Link Router HNAP Protocol Security Bypass Attempt"
+        line=" I ET WEB_SERVER Possible D-Link Router HNAP Protocol Security Bypass Attempt"
+    - name: I ET SCAN JAWS Webserver Unauthenticated Shell Command Execution
+      lineinfile: path=/etc/check_mk/logwatch.cfg
+        state=present
+        insertafter="/var/log/suricata/fast.log"
+        regexp=" I ET SCAN JAWS Webserver Unauthenticated Shell Command Execution"
+        line=" I ET SCAN JAWS Webserver Unauthenticated Shell Command Execution"
+    - name: I ET SCAN LibSSH Based Frequent SSH Connections Likely BruteForce Attack
+      lineinfile: path=/etc/check_mk/logwatch.cfg
+        state=present
+        insertafter="/var/log/suricata/fast.log"
+        regexp=" I ET SCAN LibSSH Based Frequent SSH Connections Likely BruteForce Attack"
+        line=" I ET SCAN LibSSH Based Frequent SSH Connections Likely BruteForce Attack"
+    - name: I ET SCAN Nmap Scripting Engine User-Agent Detected
+      lineinfile: path=/etc/check_mk/logwatch.cfg
+        state=present
+        insertafter="/var/log/suricata/fast.log"
+        regexp=" I ET SCAN Nmap Scripting Engine User-Agent Detected"
+        line=" I ET SCAN Nmap Scripting Engine User-Agent Detected"
+    - name: I ET SCAN ZmEu Scanner User-Agent
+      lineinfile: path=/etc/check_mk/logwatch.cfg
+        state=present
+        insertafter="/var/log/suricata/fast.log"
+        regexp=" I ET SCAN ZmEu Scanner User-Agent"
+        line=" I ET SCAN ZmEu Scanner User-Agent"
+    - name: I ET SCAN Polaris Botnet User-Agent
+      lineinfile: path=/etc/check_mk/logwatch.cfg
+        state=present
+        insertafter="/var/log/suricata/fast.log"
+        regexp=" I ET SCAN Polaris Botnet User-Agent"
+        line=" I ET SCAN Polaris Botnet User-Agent"
+    - name: I ET SCAN ELF/Mirai Variant User-Agent
+      lineinfile: path=/etc/check_mk/logwatch.cfg
+        state=present
+        insertafter="/var/log/suricata/fast.log"
+        regexp=" I ET SCAN ELF/Mirai Variant User-Agent"
+        line=" I ET SCAN ELF/Mirai Variant User-Agent"
+    - name: I ET SCAN Mirai Variant User-Agent
+      lineinfile: path=/etc/check_mk/logwatch.cfg
+        state=present
+        insertafter="/var/log/suricata/fast.log"
+        regexp=" I ET SCAN Mirai Variant User-Agent"
+        line=" I ET SCAN Mirai Variant User-Agent"
+    - name: I ET EXPLOIT Possible Spring Cloud Connector RCE Inbound \(CVE-2022-22963\)
+      lineinfile: path=/etc/check_mk/logwatch.cfg
+        state=present
+        insertafter="/var/log/suricata/fast.log"
+        regexp=" I ET EXPLOIT Possible Spring Cloud Connector RCE Inbound \(CVE-2022-22963\)"
+        line=" I ET EXPLOIT Possible Spring Cloud Connector RCE Inbound \(CVE-2022-22963\)"
+    - name: I ET EXPLOIT Linux/Attempted Hosts File Exfil
+      lineinfile: path=/etc/check_mk/logwatch.cfg
+        state=present
+        insertafter="/var/log/suricata/fast.log"
+        regexp=" I ET EXPLOIT Linux/Attempted Hosts File Exfil"
+        line=" I ET EXPLOIT Linux/Attempted Hosts File Exfil"
+    - name: I ET EXPLOIT Unknown Vulnerability Exploit Attempt
+      lineinfile: path=/etc/check_mk/logwatch.cfg
+        state=present
+        insertafter="/var/log/suricata/fast.log"
+        regexp=" I ET EXPLOIT Unknown Vulnerability Exploit Attempt"
+        line=" I ET EXPLOIT Unknown Vulnerability Exploit Attempt"
+    - name: I ET EXPLOIT D-Link DSL-2750B - OS Command Injection
+      lineinfile: path=/etc/check_mk/logwatch.cfg
+        state=present
+        insertafter="/var/log/suricata/fast.log"
+        regexp=" I ET EXPLOIT D-Link DSL-2750B - OS Command Injection"
+        line=" I ET EXPLOIT D-Link DSL-2750B - OS Command Injection"
+    - name: I ET EXPLOIT Mikrotik Winbox RCE Attempt \(CVE-2018-14847\)
+      lineinfile: path=/etc/check_mk/logwatch.cfg
+        state=present
+        insertafter="/var/log/suricata/fast.log"
+        regexp=" I ET EXPLOIT Mikrotik Winbox RCE Attempt \(CVE-2018-14847\)"
+        line=" I ET EXPLOIT Mikrotik Winbox RCE Attempt \(CVE-2018-14847\)"
+    - name: I ET EXPLOIT \[401TRG\] ZeroShell RCE Inbound \(CVE-2019-12725\)
+      lineinfile: path=/etc/check_mk/logwatch.cfg
+        state=present
+        insertafter="/var/log/suricata/fast.log"
+        regexp=" I ET EXPLOIT \[401TRG\] ZeroShell RCE Inbound \(CVE-2019-12725\)"
+        line=" I ET EXPLOIT \[401TRG\] ZeroShell RCE Inbound \(CVE-2019-12725\)"
+    - name: I ET EXPLOIT HackingTrio UA \(Hello, World\)
+      lineinfile: path=/etc/check_mk/logwatch.cfg
+        state=present
+        insertafter="/var/log/suricata/fast.log"
+        regexp=" I ET EXPLOIT HackingTrio UA \(Hello, World\)"
+        line=" I ET EXPLOIT HackingTrio UA \(Hello, World\)"
+    - name: I ET EXPLOIT Apache HTTP Server - Path Traversal Attempt \(CVE-2021-42013\)
+      lineinfile: path=/etc/check_mk/logwatch.cfg
+        state=present
+        insertafter="/var/log/suricata/fast.log"
+        regexp=" I ET EXPLOIT Apache HTTP Server - Path Traversal Attempt \(CVE-2021-42013\)"
+        line=" I ET EXPLOIT Apache HTTP Server - Path Traversal Attempt \(CVE-2021-42013\)"
+    - name: I ET EXPLOIT MVPower DVR Shell UCE
+      lineinfile: path=/etc/check_mk/logwatch.cfg
+        state=present
+        insertafter="/var/log/suricata/fast.log"
+        regexp=" I ET EXPLOIT MVPower DVR Shell UCE"
+        line=" I ET EXPLOIT MVPower DVR Shell UCE"
+    - name: I ET EXPLOIT Apache Obfuscated log4j RCE Attempt
+      lineinfile: path=/etc/check_mk/logwatch.cfg
+        state=present
+        insertafter="/var/log/suricata/fast.log"
+        regexp=" I ET EXPLOIT Apache Obfuscated log4j RCE Attempt"
+        line=" I ET EXPLOIT Apache Obfuscated log4j RCE Attempt"
+    - name: I ET EXPLOIT Zimbra
+      lineinfile: path=/etc/check_mk/logwatch.cfg
+        state=present
+        insertafter="/var/log/suricata/fast.log"
+        regexp=" I ET EXPLOIT Zimbra"
+        line=" I ET EXPLOIT Zimbra"
+    - name: I ET EXPLOIT Zyxel NAS RCE Attempt Inbound
+      lineinfile: path=/etc/check_mk/logwatch.cfg
+        state=present
+        insertafter="/var/log/suricata/fast.log"
+        regexp=" I ET EXPLOIT Zyxel NAS RCE Attempt Inbound"
+        line=" I ET EXPLOIT Zyxel NAS RCE Attempt Inbound"
+    - name: I ET EXPLOIT Netlink GPON Remote Code Execution Attempt
+      lineinfile: path=/etc/check_mk/logwatch.cfg
+        state=present
+        insertafter="/var/log/suricata/fast.log"
+        regexp=" I ET EXPLOIT Netlink GPON Remote Code Execution Attempt"
+        line=" I ET EXPLOIT Netlink GPON Remote Code Execution Attempt"
+    - name: I ET EXPLOIT D-Link Devices Home Network Administration Protocol Command Execution
+      lineinfile: path=/etc/check_mk/logwatch.cfg
+        state=present
+        insertafter="/var/log/suricata/fast.log"
+        regexp=" I ET EXPLOIT D-Link Devices Home Network Administration Protocol Command Execution"
+        line=" I ET EXPLOIT D-Link Devices Home Network Administration Protocol Command Execution"
+    - name: I ET EXPLOIT Apache log4j RCE Attempt
+      lineinfile: path=/etc/check_mk/logwatch.cfg
+        state=present
+        insertafter=".*/var/log/suricata/fast.log.*"
+        regexp="I ET EXPLOIT Apache log4j RCE Attempt"
+        line=" I ET EXPLOIT Apache log4j RCE Attempt"
+    - name: I ET WEB_SPECIFIC_APPS Drupalgeddon2
+      lineinfile: path=/etc/check_mk/logwatch.cfg
+        state=present
+        insertafter=".*/var/log/suricata/fast.log.*"
+        regexp="I ET WEB_SPECIFIC_APPS Drupalgeddon2"
+        line=" I ET WEB_SPECIFIC_APPS Drupalgeddon2"
+    - name: I ET EXPLOIT Tenda OS Command Injection (CVE-2020-10987)
+      lineinfile: path=/etc/check_mk/logwatch.cfg
+        state=present
+        insertafter=".*/var/log/suricata/fast.log.*"
+        regexp="I ET EXPLOIT Tenda OS Command Injection \(CVE-2020-10987\)"
+        line=" I ET EXPLOIT Tenda OS Command Injection \(CVE-2020-10987\)"
