@@ -259,3 +259,9 @@
         insertafter=".*/var/log/suricata/fast.log.*"
         regexp="I ET EXPLOIT Possible SpringCore RCE/Spring4Shell Inbound \(CVE-2022-22965\)"
         line=" I ET EXPLOIT Possible SpringCore RCE/Spring4Shell Inbound \(CVE-2022-22965\)"
+    - name: ET EXPLOIT Apache HTTP Server 2.4.49 - Path Traversal Attempt (CVE-2021-41773)
+      lineinfile: path=/etc/check_mk/logwatch.cfg
+        state=present
+        insertafter=".*/var/log/suricata/fast.log.*"
+        regexp="ET EXPLOIT Apache HTTP Server 2.4.49 - Path Traversal Attempt \(CVE-2021-41773\)"
+        line=" ET EXPLOIT Apache HTTP Server 2.4.49 - Path Traversal Attempt \(CVE-2021-41773\)"
