@@ -259,9 +259,21 @@
         insertafter=".*/var/log/suricata/fast.log.*"
         regexp="I ET EXPLOIT Possible SpringCore RCE/Spring4Shell Inbound \(CVE-2022-22965\)"
         line=" I ET EXPLOIT Possible SpringCore RCE/Spring4Shell Inbound \(CVE-2022-22965\)"
-    - name: ET EXPLOIT Apache HTTP Server 2.4.49 - Path Traversal Attempt (CVE-2021-41773)
+    - name: I ET EXPLOIT Apache HTTP Server 2.4.49 - Path Traversal Attempt (CVE-2021-41773)
       lineinfile: path=/etc/check_mk/logwatch.cfg
         state=present
         insertafter=".*/var/log/suricata/fast.log.*"
-        regexp="ET EXPLOIT Apache HTTP Server 2.4.49 - Path Traversal Attempt \(CVE-2021-41773\)"
-        line=" ET EXPLOIT Apache HTTP Server 2.4.49 - Path Traversal Attempt \(CVE-2021-41773\)"
+        regexp="I ET EXPLOIT Apache HTTP Server 2.4.49 - Path Traversal Attempt \(CVE-2021-41773\)"
+        line=" I ET EXPLOIT Apache HTTP Server 2.4.49 - Path Traversal Attempt \(CVE-2021-41773\)"
+    - name: I ET EXPLOIT Shenzhen TVT DVR/NVR/IPC WebUI RCE ADD Attempt
+      lineinfile: path=/etc/check_mk/logwatch.cfg
+        state=present
+        insertafter=".*/var/log/suricata/fast.log.*"
+        regexp="I ET EXPLOIT Shenzhen TVT DVR/NVR/IPC WebUI RCE ADD Attempt"
+        line=" I ET EXPLOIT Shenzhen TVT DVR/NVR/IPC WebUI RCE ADD Attempt"
+    - name: I ET EXPLOIT Shenzhen TVT DVR/NVR/IPC Hardcoded WebUI Login Attempt
+      lineinfile: path=/etc/check_mk/logwatch.cfg
+        state=present
+        insertafter=".*/var/log/suricata/fast.log.*"
+        regexp="I ET EXPLOIT Shenzhen TVT DVR/NVR/IPC Hardcoded WebUI Login Attempt"
+        line=" I ET EXPLOIT Shenzhen TVT DVR/NVR/IPC Hardcoded WebUI Login Attempt"
