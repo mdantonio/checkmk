@@ -253,3 +253,9 @@
         insertafter=".*/var/log/suricata/fast.log.*"
         regexp="I ET EXPLOIT Tenda OS Command Injection \(CVE-2020-10987\)"
         line=" I ET EXPLOIT Tenda OS Command Injection \(CVE-2020-10987\)"
+    - name: I ET EXPLOIT Possible SpringCore RCE/Spring4Shell Inbound (CVE-2022-22965)
+      lineinfile: path=/etc/check_mk/logwatch.cfg
+        state=present
+        insertafter=".*/var/log/suricata/fast.log.*"
+        regexp="I ET EXPLOIT Possible SpringCore RCE/Spring4Shell Inbound \(CVE-2022-22965\)"
+        line=" I ET EXPLOIT Possible SpringCore RCE/Spring4Shell Inbound \(CVE-2022-22965\)"
