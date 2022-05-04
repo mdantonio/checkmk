@@ -81,7 +81,13 @@ echo "OS: $OS"
 
 echo "Downloading Agent Package..."
 AGENTS_URL=${CHECK_MK_HOST}/${CHECK_MK_INSTANCE}/check_mk/agents/
-FILENAME=$(curl -s ${AGENTS_URL} | grep -oP "check-mk-agent\w[a-z\-\_0-9\.]+" | head -1)
+
+if [ "$OS" == "rhel" ];
+then
+    FILENAME=$(curl -s ${AGENTS_URL} | grep -oP "check-mk-agent-[a-z\-\_0-9\.]+.rpm" | head -1)
+else
+    FILENAME=$(curl -s ${AGENTS_URL} | grep -oP "check-mk-agent\w[a-z\-\_0-9\.]+.deb" | head -1)
+fi
 
 if [[ -z $FILENAME ]]; then
     echo ""
