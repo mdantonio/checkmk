@@ -84,7 +84,7 @@
         state=present
         regexp="/var/log/dmesg"
         line="/var/log/dmesg"
-    - name: I RAS: Correctable Errors collector initialized
+    - name: I RAS Correctable Errors collector initialized
       lineinfile: path=/etc/check_mk/logwatch.cfg
         state=present
         insertafter="/var/log/dmesg"
