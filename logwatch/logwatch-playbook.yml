@@ -79,3 +79,14 @@
         insertafter="/var/log/syslog"
         regexp=" I PAM failed{{ ":" }} Authentication token is no longer valid; new one required"
         line=" I PAM failed{{ ":" }} Authentication token is no longer valid; new one required"
+    - name: /var/log/dmesg
+      lineinfile: path=/etc/check_mk/logwatch.cfg
+        state=present
+        regexp="/var/log/dmesg"
+        line="/var/log/dmesg"
+    - name: I RAS: Correctable Errors collector initialized
+      lineinfile: path=/etc/check_mk/logwatch.cfg
+        state=present
+        insertafter="/var/log/dmesg"
+        regexp=" I RAS{{ ":" }} Correctable Errors collector initialized"
+        line=" I RAS{{ ":" }} Correctable Errors collector initialized"
