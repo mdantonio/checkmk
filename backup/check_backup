@@ -38,9 +38,8 @@ if configfile.exists():
                     w = round(hours * 1.5)
                     c = round(w * 2)
                     print(f'P "RAPyDo Backup {backup_path.stem}" hours={last_backup};{w};{c};0; Last backup executed {last_backup} hour(s) ago')
-rsnapshot = shutil.which("rsnapshot") is not None
 
-if rsnapshot:
+if shutil.which("rsnapshot") is not None:
 
     last_backup = -1
 
@@ -78,4 +77,3 @@ if rsnapshot:
         print('2 "Rsnapshot Backup" - Last backup not found')
     else:
         print(f'P "Rsnapshot Backup" hours={last_backup};36;72;0; Last backup executed {last_backup} hour(s) ago')
-
