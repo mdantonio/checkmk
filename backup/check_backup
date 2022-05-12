@@ -4,46 +4,40 @@ import shutil
 from pathlib import Path
 from datetime import datetime
 
-rapydo = shutil.which("rapydo") is not None
+configfile = Path("/etc/check_mk/backup.cfg")
 
-if rapydo:
-    configfile = Path("/etc/check_mk/backup.cfg")
+if configfile.exists():
+    with open(configfile, "r") as f:
+        for line in f:
+            line = line.strip()
+            if " " not in line:
+                continue
+            days, p = line.split(" ")
+            try:
+                days = int(days)
+            except Exception:
+                print(f'1 "RAPyDo Backup" - Wrong configuration file, {days} is not a number')
+                days = 1
 
-    if not configfile.exists():
-        print('1 "RAPyDo Backup" - Configuration file not found')
-    else:
-        with open(configfile, "r") as f:
-            for line in f:
-                line = line.strip()
-                if " " not in line:
-                    continue
-                days, p = line.split(" ")
-                try:
-                    days = int(days)
-                except Exception:
-                    print(f'1 "RAPyDo Backup" - Wrong configuration file, {days} is not a number')
-                    days = 1
+            hours = days * 24
 
-                hours = days * 24
+            backup_path = Path(p)
+            if not backup_path.exists():
+                print(f'2 "RAPyDo Backup {backup_path.stem}" - {backup_path} not found')
+            else:
+                last_backup = -1
+                for backup_file in backup_path.iterdir():
+                    last_mod = datetime.fromtimestamp(backup_file.stat().st_mtime)
+                    t = round((datetime.now() - last_mod).total_seconds() / 3600)
+                    if last_backup == -1 or last_backup > t:
+                        last_backup = t
 
-                backup_path = Path(p)
-                if not backup_path.exists():
-                    print(f'2 "RAPyDo Backup {backup_path.stem}" - {backup_path} not found')
+                if last_backup == -1:
+                    print(f'2 "RAPyDo Backup {backup_path.stem}" - Last backup not found')
                 else:
-                    last_backup = -1
-                    for backup_file in backup_path.iterdir():
-                        last_mod = datetime.fromtimestamp(backup_file.stat().st_mtime)
-                        t = round((datetime.now() - last_mod).total_seconds() / 3600)
-                        if last_backup == -1 or last_backup > t:
-                            last_backup = t
-
-                    if last_backup == -1:
-                        print(f'2 "RAPyDo Backup {backup_path.stem}" - Last backup not found')
-                    else:
-                        w = round(hours * 1.5)
-                        c = round(w * 2)
-                        print(f'P "RAPyDo Backup {backup_path.stem}" hours={last_backup};{w};{c};0; Last backup executed {last_backup} hour(s) ago')
-
+                    w = round(hours * 1.5)
+                    c = round(w * 2)
+                    print(f'P "RAPyDo Backup {backup_path.stem}" hours={last_backup};{w};{c};0; Last backup executed {last_backup} hour(s) ago')
 rsnapshot = shutil.which("rsnapshot") is not None
 
 if rsnapshot:
