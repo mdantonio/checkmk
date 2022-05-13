@@ -277,3 +277,51 @@
         insertafter=".*/var/log/suricata/fast.log.*"
         regexp="I ET EXPLOIT Shenzhen TVT DVR/NVR/IPC Hardcoded WebUI Login Attempt"
         line=" I ET EXPLOIT Shenzhen TVT DVR/NVR/IPC Hardcoded WebUI Login Attempt"
+    - name: I ET WEB_SERVER allow_url_include PHP config option in uri
+      lineinfile: path=/etc/check_mk/logwatch.cfg
+        state=present
+        insertafter=".*/var/log/suricata/fast.log.*"
+        regexp="I ET WEB_SERVER allow_url_include PHP config option in uri"
+        line=" I ET WEB_SERVER allow_url_include PHP config option in uri"
+    - name: I ET WEB_SERVER allow_url_include PHP config option in uri
+      lineinfile: path=/etc/check_mk/logwatch.cfg
+        state=present
+        insertafter=".*/var/log/suricata/fast.log.*"
+        regexp="I ET WEB_SERVER allow_url_include PHP config option in uri"
+        line=" I ET WEB_SERVER allow_url_include PHP config option in uri"
+    - name: I ET WEB_SERVER safe_mode PHP config option in uri
+      lineinfile: path=/etc/check_mk/logwatch.cfg
+        state=present
+        insertafter=".*/var/log/suricata/fast.log.*"
+        regexp="I ET WEB_SERVER safe_mode PHP config option in uri"
+        line=" I ET WEB_SERVER safe_mode PHP config option in uri"
+    - name: I ET WEB_SERVER suhosin.simulation PHP config option in uri
+      lineinfile: path=/etc/check_mk/logwatch.cfg
+        state=present
+        insertafter=".*/var/log/suricata/fast.log.*"
+        regexp="I ET WEB_SERVER suhosin\.simulation PHP config option in uri"
+        line=" I ET WEB_SERVER suhosin\.simulation PHP config option in uri"
+    - name: I ET WEB_SERVER disable_functions PHP config option in uri
+      lineinfile: path=/etc/check_mk/logwatch.cfg
+        state=present
+        insertafter=".*/var/log/suricata/fast.log.*"
+        regexp="I ET WEB_SERVER disable_functions PHP config option in uri"
+        line=" I ET WEB_SERVER disable_functions PHP config option in uri"
+    - name: I ET WEB_SERVER open_basedir PHP config option in uri
+      lineinfile: path=/etc/check_mk/logwatch.cfg
+        state=present
+        insertafter=".*/var/log/suricata/fast.log.*"
+        regexp="I ET WEB_SERVER open_basedir PHP config option in uri"
+        line=" I ET WEB_SERVER open_basedir PHP config option in uri"
+    - name: I ET WEB_SERVER auto_prepend_file PHP config option in uri
+      lineinfile: path=/etc/check_mk/logwatch.cfg
+        state=present
+        insertafter=".*/var/log/suricata/fast.log.*"
+        regexp="I ET WEB_SERVER auto_prepend_file PHP config option in uri"
+        line=" I ET WEB_SERVER auto_prepend_file PHP config option in uri"
+    - name: I ET WEB_SERVER PHP System Command in HTTP POST
+      lineinfile: path=/etc/check_mk/logwatch.cfg
+        state=present
+        insertafter=".*/var/log/suricata/fast.log.*"
+        regexp="I ET WEB_SERVER PHP System Command in HTTP POST"
+        line=" I ET WEB_SERVER PHP System Command in HTTP POST"
