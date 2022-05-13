@@ -79,6 +79,48 @@
         insertafter="/var/log/syslog"
         regexp=" I PAM failed{{ ":" }} Authentication token is no longer valid; new one required"
         line=" I PAM failed{{ ":" }} Authentication token is no longer valid; new one required"
+    - name: I failed to load plugin io.containerd.snapshotter.v1.devmapper
+      lineinfile: path=/etc/check_mk/logwatch.cfg
+        state=present
+        insertafter="/var/log/syslog"
+        regexp=" I failed to load plugin io\.containerd\.snapshotter\.v1\.devmapper"
+        line=" I failed to load plugin io\.containerd\.snapshotter\.v1\.devmapper"
+    - name: I no OpenTelemetry endpoint skip plugin
+      lineinfile: path=/etc/check_mk/logwatch.cfg
+        state=present
+        insertafter="/var/log/syslog"
+        regexp=" I no OpenTelemetry endpoint{{ ":" }} skip plugin"
+        line=" I no OpenTelemetry endpoint{{ ":" }} skip plugin"
+    - name: I Starting GRUB failed boot detection
+      lineinfile: path=/etc/check_mk/logwatch.cfg
+        state=present
+        insertafter="/var/log/syslog"
+        regexp=" I Starting GRUB failed boot detection"
+        line=" I Starting GRUB failed boot detection"
+    - name: I Finished GRUB failed boot detection
+      lineinfile: path=/etc/check_mk/logwatch.cfg
+        state=present
+        insertafter="/var/log/syslog"
+        regexp=" I Finished GRUB failed boot detection"
+        line=" I Finished GRUB failed boot detection"
+    - name: I Container failed to exit within 10s of signal
+      lineinfile: path=/etc/check_mk/logwatch.cfg
+        state=present
+        insertafter="/var/log/syslog"
+        regexp=" I Container failed to exit within .*s of signal"
+        line=" I Container failed to exit within .*s of signal"
+    - name: RAPyDo Backup logs rotate
+      lineinfile: path=/etc/check_mk/logwatch.cfg
+        state=present
+        insertafter="/var/log/syslog"
+        regexp=" I FileNotFoundError{{ ":" }} \[Errno 2\] No such file or directory{{ ":" }} '/logs/backend-server\.log' -> '/logs/backend-server\..*\.log'"
+        line=" I FileNotFoundError{{ ":" }} \[Errno 2\] No such file or directory{{ ":" }} '/logs/backend-server\.log' -> '/logs/backend-server\..*\.log'"
+    - name: RAPyDo Security logs rotate
+      lineinfile: path=/etc/check_mk/logwatch.cfg
+        state=present
+        insertafter="/var/log/syslog"
+        regexp=" I FileNotFoundError{{ ":" }} \[Errno 2\] No such file or directory{{ ":" }} '/logs/security-events\.log' -> '/logs/security-events\..*\.log'"
+        line=" I FileNotFoundError{{ ":" }} \[Errno 2\] No such file or directory{{ ":" }} '/logs/security-events\.log' -> '/logs/security-events\..*\.log'"
     - name: /var/log/dmesg
       lineinfile: path=/etc/check_mk/logwatch.cfg
         state=present
