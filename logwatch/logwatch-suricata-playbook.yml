@@ -331,3 +331,9 @@
         insertafter=".*/var/log/suricata/fast.log.*"
         regexp="I ET WEB_SERVER PHP tags in HTTP POST"
         line=" I ET WEB_SERVER PHP tags in HTTP POST"
+    - name: I ET EXPLOIT F5 BIG-IP iControl REST authentication bypass attempt (CVE 2022-1388)
+      lineinfile: path=/etc/check_mk/logwatch.cfg
+        state=present
+        insertafter=".*/var/log/suricata/fast.log.*"
+        regexp="I ET EXPLOIT F5 BIG-IP iControl REST authentication bypass attempt \(CVE 2022-1388\)"
+        line=" I ET EXPLOIT F5 BIG-IP iControl REST authentication bypass attempt \(CVE 2022-1388\)"
