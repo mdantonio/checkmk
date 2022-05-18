@@ -325,3 +325,9 @@
         insertafter=".*/var/log/suricata/fast.log.*"
         regexp="I ET WEB_SERVER PHP System Command in HTTP POST"
         line=" I ET WEB_SERVER PHP System Command in HTTP POST"
+    - name: I ET WEB_SERVER PHP tags in HTTP POST
+      lineinfile: path=/etc/check_mk/logwatch.cfg
+        state=present
+        insertafter=".*/var/log/suricata/fast.log.*"
+        regexp="I ET WEB_SERVER PHP tags in HTTP POST"
+        line=" I ET WEB_SERVER PHP tags in HTTP POST"
