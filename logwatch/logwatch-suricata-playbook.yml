@@ -349,3 +349,27 @@
         insertafter=".*/var/log/suricata/fast.log.*"
         regexp="I ET EXPLOIT ZTE Cable Modem RCE Attempt \(CVE-2014-2321\)"
         line=" I ET EXPLOIT ZTE Cable Modem RCE Attempt \(CVE-2014-2321\)"
+    - name: I ET EXPLOIT Linksys WAP54G debug.cgi Shell Access as Gemtek
+      lineinfile: path=/etc/check_mk/logwatch.cfg
+        state=present
+        insertafter=".*/var/log/suricata/fast.log.*"
+        regexp="I ET EXPLOIT Linksys WAP54G debug\.cgi Shell Access as Gemtek"
+        line=" I ET EXPLOIT Linksys WAP54G debug\.cgi Shell Access as Gemtek"
+    - name: I ET WEB_SERVER CURL Command Specifying Output in HTTP Headers
+      lineinfile: path=/etc/check_mk/logwatch.cfg
+        state=present
+        insertafter=".*/var/log/suricata/fast.log.*"
+        regexp="I ET WEB_SERVER CURL Command Specifying Output in HTTP Headers"
+        line=" I ET WEB_SERVER CURL Command Specifying Output in HTTP Headers"
+    - name: I ET EXPLOIT Generic ADSL Router DNS Change
+      lineinfile: path=/etc/check_mk/logwatch.cfg
+        state=present
+        insertafter=".*/var/log/suricata/fast.log.*"
+        regexp="I ET EXPLOIT Generic ADSL Router DNS Change"
+        line=" I ET EXPLOIT Generic ADSL Router DNS Change"
+    - name: I ET EXPLOIT Possible Zimbra
+      lineinfile: path=/etc/check_mk/logwatch.cfg
+        state=present
+        insertafter="/var/log/suricata/fast.log"
+        regexp=" I ET EXPLOIT Possible Zimbra"
+        line=" I ET EXPLOIT Possible Zimbra"
